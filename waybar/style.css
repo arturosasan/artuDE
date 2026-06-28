@@ -1,0 +1,265 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@import "waybar-red.css";
+
+/*
+ Polar Night
+ nord0  #2e3440
+ nord1  #3b4252
+ nord2  #434c5e
+ nord3  #4c566a
+ Snow Storm
+ nord4  #d8dee9
+ nord5  #e5e9f0
+ nord6  #eceff4
+ Frost
+ nord7  #8fbcbb
+ nord8  #88c0d0
+ nord9  #81a1c1
+ nord10 #5e81ac
+ Aurora
+ nord11 #bf616a
+ nord12 #d08770
+ nord13 #ebcb8b
+ nord14 #a3be8c
+ nord15 #b48ead
+ */
+
+/* -----------------------------------------------------------------------------
+  * Base styles
+  * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+
+* {
+    color: @lavender;
+    border: none;
+    padding: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    border: 0px solid rgba(0, 0, 0, 0);
+    /* border-radius: 10px; */
+    /* background:#2d2a2e; */
+    /* background-color: rgba(36, 39, 58, 0.85); */
+    background-color: rgba(0, 0, 0, 0);
+    /* background-color: shade(#1e1e2e, 0.95); */
+}
+
+#workspaces button {
+    color: @base;
+    border-radius: 10px;
+    padding: 0px 6px;
+    margin: 0px 2px;
+    /*cursor: pointer;*/
+}
+
+#workspaces button:hover {
+    color: @mauve;
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    border: 0px;
+    background: none;
+}
+
+#workspaces button:hover * {
+    color: @mauve;
+    background-color: @base;
+}
+
+#workspaces * {
+    color: @text;
+}
+
+#workspaces {
+    border-style: solid;
+    background-color: @base;
+    opacity: 1;
+    border-radius: 10px;
+    margin: 6px 0px 6px 8px;
+}
+
+#workspaces button.active {
+    color: @mauve;
+    border-radius: 10px;
+    background-color: shade(@base, 1.2);
+}
+
+#workspaces button.active * {
+    color: @mauve;
+}
+
+#clock,
+#custom-media,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#bluetooth,
+#custom-power,
+#window {
+    padding: 2px 10px;
+    background-color: shade(@base, 1);
+    margin: 6px 0;
+    border-radius: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+  * Module styles
+  * -------------------------------------------------------------------------- */
+
+#custom-media {
+    color: @green;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#custom-media.playing {
+    color: @green;
+}
+
+#custom-media.paused {
+    color: @subtext0;
+}
+
+#custom-media.stopped {
+    color: @overlay0;
+}
+
+#clock {
+    color: @mauve;
+    border-radius: 10px;
+    margin: 6px 10px;
+}
+
+#backlight {
+    color: @yellow;
+    margin-left: 4px;
+}
+
+#battery {
+    color: @subtext0;
+    margin-left: 4px;
+    padding: 0px 12px 0px 9px;
+}
+
+#battery.charging {
+    color: @peach;
+}
+
+@keyframes blink {
+    to {
+        color: @maroon;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: @mauve;
+    border-radius: 0 10px 10px 0;
+}
+
+#cpu #cpu-icon {
+    color: @mauve;
+}
+
+#memory {
+    color: @mauve;
+    border-radius: 0;
+}
+
+#network {
+    color: #3a96ff;
+    border-radius: 10px;
+    margin-left: 4px;
+}
+
+#network.disabled {
+    color: @red;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#pulseaudio {
+    color: @flamingo;
+    margin-left: 4px;
+}
+
+#pulseaudio.muted {
+    color: @overlay0;
+}
+
+#bluetooth {
+    color: @blue;
+    margin-left: 4px;
+}
+
+#bluetooth.off {
+    color: @overlay0;
+}
+
+#bluetooth.connected {
+    color: @green;
+}
+
+#temperature {
+    color: @teal;
+    border-radius: 10px 0 0 10px;
+    margin-left: 4px;
+}
+
+#temperature.critical {
+    color: @red;
+    /* border-bottom: 2px solid @red; */
+}
+
+#custom-power {
+    color: @crust;
+    background-color: @mauve;
+    border-radius: 10px;
+    margin: 6px 10px 6px 4px;
+    padding: 0px 8px 0px 6px;
+}
+
+#window {
+    color: @sapphire;
+    border-style: hidden;
+    margin: 6px 10px;
+}
+
+window.empty #window {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    min-width: 0;
+}

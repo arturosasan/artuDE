@@ -1,0 +1,36 @@
+/*
+*
+* Noctalia Red palette
+*
+*/
+
+@define-color base   #291414;
+@define-color mantle #1e0d0d;
+@define-color crust  #0f0707;
+
+@define-color text     #f3f2f2;
+@define-color subtext0 #b6afaf;
+@define-color subtext1 #c5b6b6;
+
+@define-color surface0 #452121;
+@define-color surface1 #532929;
+@define-color surface2 #613131;
+
+@define-color overlay0 #756161;
+@define-color overlay1 #8a7171;
+@define-color overlay2 #9f8181;
+
+@define-color blue      #7a9ea8;
+@define-color lavender  #f3f2f2;
+@define-color sapphire  #7dc4e4;
+@define-color sky       #dc9a56;
+@define-color teal      #8bd5ca;
+@define-color green     #a6da95;
+@define-color yellow    #dbdc56;
+@define-color peach     #dc9a56;
+@define-color maroon    #be2928;
+@define-color red       #be2928;
+@define-color mauve     #e46867;
+@define-color pink      #e46867;
+@define-color flamingo  #dc9a56;
+@define-color rosewater #f3d2c9;
