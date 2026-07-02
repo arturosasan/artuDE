@@ -44,6 +44,7 @@ CONFIG_DIRS=(
   "xsettingsd"
   "nwg-look"
   "wlogout"
+  "swaync"
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
