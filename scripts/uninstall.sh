@@ -38,6 +38,7 @@ CONFIG_DIRS=(
   "lazygit"
   "xsettingsd"
   "nwg-look"
+  "wlogout"
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do

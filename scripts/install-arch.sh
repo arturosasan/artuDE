@@ -24,7 +24,7 @@ sudo pacman -Sy || true
 
 echo ""
 echo "[*] Installing Hyprland & core DE..."
-install_pkg hyprland hyprlock hyprpaper waybar swaync rofi wayland-utils || true
+install_pkg hyprland hyprlock hyprpaper waybar swaync rofi wlogout wayland-utils || true
 try_install "xdg-desktop-portal-hyprland" sudo pacman -S --noconfirm xdg-desktop-portal-hyprland || true
 try_install "screenshot (hyprshot)" sudo pacman -S --noconfirm hyprshot grim slurp || true
 

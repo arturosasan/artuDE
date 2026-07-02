@@ -25,6 +25,7 @@ The repository is designed to be instantly deployable on a fresh Arch Linux inst
 | Category | Tools |
 |---|---|
 | **Window Manager** | Hyprland, Hyprlock, Hyprpaper |
+| **Logout** | Wlogout |
 | **Bar** | Waybar + custom scripts |
 | **Notifications** | SwayNC |
 | **Launcher** | Rofi |
@@ -87,6 +88,7 @@ artuDE/
 ├── lazygit/      → ~/.config/lazygit/       # Git TUI
 ├── rofi/         → ~/.config/rofi/          # App launcher
 ├── fontconfig/   → ~/.config/fontconfig/    # Font rendering preferences
+├── wlogout/      → ~/.config/wlogout/       # Logout menu
 ├── scripts/      → installer and helper scripts
 └── install.sh    → entry point (detects OS and runs install-arch.sh + symlink.sh)
 ```
