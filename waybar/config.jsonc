@@ -19,10 +19,27 @@
     "cpu",
     "battery",
     "network",
+    "custom/notification",
     "custom/power"
   ],
 
   // Modules configuration
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
 
   "hyprland/workspaces": {
     "all-outputs": true,

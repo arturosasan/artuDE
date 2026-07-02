@@ -7,7 +7,7 @@
 @define-color error                  #be2928;
 @define-color inverse_surface        #f3f2f2;
 @define-color on_secondary           #f3f2f2;
-@define-color color1                 #be2928;
+@define-color color1                 #E5211D;
 
 @import 'themes/control_center.css';
 @import 'themes/notifications.css';

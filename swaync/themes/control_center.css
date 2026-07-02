@@ -1,7 +1,7 @@
 @define-color text            @on_surface;
-@define-color background-alt  alpha(@color1, .4);
-@define-color selected        @outline;
-@define-color hover           alpha(@selected, 1);
+@define-color background-alt  alpha(@color1, .3);
+@define-color selected        @color1;
+@define-color hover           alpha(@color1, .5);
 @define-color urgent          @error;
 
 * {
@@ -17,45 +17,60 @@
 }
 
 .control-center {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 24px;
-  border: 1px solid @selected;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
-  margin: 18px;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  border: 1px solid alpha(@selected, .35);
+  margin: 12px;
   padding: 12px;
+}
+
+.control-center .control-center-list-placeholder {
+  opacity: 0.6;
+}
+
+.control-center .control-center-list-placeholder > label {
+  color: @text;
+  font-size: 0.9rem;
+}
+
+.control-center .control-center-list-placeholder > image {
+  -gtk-icon-source: none;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .control-center .notification-row .notification-background,
 .control-center .notification-row .notification-background .notification.critical {
-  background-color: @on_secondary_fixed;
-  border: 1px solid @hover;
-  border-radius: 16px;
+  background-color: alpha(@background, .6);
+  border: 1px solid alpha(@hover, .3);
+  border-radius: 12px;
   margin: 4px 0px;
   padding: 4px;
 }
 
 .control-center .notification-row .notification-background .notification.critical {
   color: @urgent;
+  border-color: @urgent;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content {
   margin: 6px;
-  padding: 6px 6px 2px 2px;
+  padding: 6px;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * {
-  min-height: 3.4em;
+  min-height: 3em;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  background: alpha(@selected, .6);
+  background: alpha(@background, .4);
   color: @text;
-  border-radius: 12px;
-  margin: 6px;
+  border-radius: 8px;
+  margin: 4px;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
-  background: @selected;
+  background: @hover;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
@@ -71,7 +86,7 @@
 }
 
 .control-center .notification-row .notification-background .close-button:hover {
-  background-color: @selected;
+  background-color: @hover;
 }
 
 .control-center .notification-row .notification-background .close-button:active {
@@ -123,7 +138,7 @@ progressbar {
 }
 
 .widget-title button {
-  background: alpha(@hover, .50);
+  background: alpha(@hover, .4);
   border-radius: 6px;
   padding: 4px 16px;
 }
@@ -134,6 +149,7 @@ progressbar {
 
 .widget-title button:active {
   background-color: @selected;
+  color: @on_secondary_fixed;
 }
 
 .widget-dnd {
@@ -142,7 +158,7 @@ progressbar {
 }
 
 .widget-dnd > switch {
-  background: alpha(@hover, .50);
+  background: alpha(@hover, .4);
   font-size: initial;
   border-radius: 8px;
   box-shadow: none;
@@ -163,74 +179,5 @@ progressbar {
 
 .widget-dnd > switch slider {
   background: @text;
-  border-radius: 6px;
-}
-
-.widget-buttons-grid {
-  font-size: x-large;
-  padding: 6px 2px;
-  margin: 6px;
-  border-radius: 12px;
-  background: alpha(@hover, .50);
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button {
-  margin: 4px 10px;
-  padding: 6px 12px;
-  background: transparent;
-  border-radius: 8px;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @hover;
-}
-
-.widget-mpris {
-    background: alpha(@hover, .50);
-    border-radius: 16px;
-    color: @text;
-    margin:  20px 6px;
-}
-
-.widget-mpris-player {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 14px;
-    padding: 6px 14px;
-    margin: 6px;
-}
-
-.widget-mpris > box > button {
-  color: @text;
-  border-radius: 20px;
-}
-
-.widget-mpris button {
-  color: alpha(@text, .6);
-}
-
-.widget-mpris button:hover {
-  color: @text;
-}
-
-.widget-mpris-album-art {
-  border-radius: 12px;
-  margin: 6px 0 0 2px;
-}
-
-.widget-mpris-title {
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-.widget-mpris-subtitle {
-    font-weight: 500;
-    font-size: 0.8rem;
-}
-
-.widget-volume {
-  background: @background-sec;
-  color: @background;
-  padding: 4px;
-  margin: 6px;
   border-radius: 6px;
 }

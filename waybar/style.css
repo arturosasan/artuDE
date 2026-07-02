@@ -256,6 +256,26 @@ window#waybar {
     margin: 6px 10px;
 }
 
+#custom-notification {
+    color: @text;
+    background-color: shade(@base, 1);
+    margin: 6px 10px;
+    border-radius: 10px;
+    padding: 2px 10px;
+}
+
+#custom-notification.notification {
+    color: @peach;
+}
+
+#custom-notification.dnd-none {
+    color: @overlay0;
+}
+
+#custom-notification.dnd-notification {
+    color: @mauve;
+}
+
 window.empty #window {
     padding: 0;
     margin: 0;

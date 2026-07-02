@@ -15,41 +15,36 @@
   "notification-icon-size": 24,
   "notification-body-image-height": 100,
   "notification-body-image-width": 100,
-  "notification-window-width": 300,
+  "notification-window-width": 100,
   "timeout": 6,
   "timeout-low": 3,
   "timeout-critical": 0,
   "fit-to-screen": false,
-  "control-center-width": 380,
-  "control-center-height": 800,
+  "control-center-width": 360,
+  "control-center-height": 600,
   "keyboard-shortcuts": true,
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": true,
+  "text-empty": "Sin notificaciones",
   "script-fail-notify": true,
   "widgets": [
-      "buttons-grid",
-      "mpris",
       "dnd",
       "title",
       "notifications"
   ],
   "widget-config": {
       "title": {
-          "text": "Notifications",
+          "text": "Notificationes",
           "clear-all-button": true,
           "button-text": "󰎟"
       },
       "dnd": {
-          "text": "Do Not Disturb"
+          "text": "No molestar"
       },
       "label": {
           "max-lines": 1,
-          "text": "Notification"
-      },
-      "mpris": {
-          "image-size": 50,
-          "image-radius": 12
+          "text": "Notificatión"
       },
       "buttons-grid": {
           "actions": [
