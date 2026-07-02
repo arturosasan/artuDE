@@ -1,36 +1,36 @@
 {
-    "label" : "lock",
-    "action" : "$HOME/.config/hypr/scripts/hyprlock.sh",
-    "text" : "Lock",
-    "keybind" : "l"
-}
-{
     "label" : "reboot",
     "action" : "systemctl reboot",
-    "text" : "Reboot",
+    "text" : "Reiniciar",
     "keybind" : "r"
+}
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Bloquear",
+    "keybind" : "l"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Shutdown",
+    "text" : "Apagar",
     "keybind" : "s"
 }
 {
     "label" : "logout",
     "action" : "loginctl kill-session $XDG_SESSION_ID",
-    "text" : "Logout",
+    "text" : "Cerrar sesión",
     "keybind" : "e"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
-    "text" : "Suspend",
+    "text" : "Suspender",
     "keybind" : "u"
 }
 {
     "label" : "hibernate",
     "action" : "systemctl hibernate",
-    "text" : "Hibernate",
+    "text" : "Hibernar",
     "keybind" : "h"
 }
