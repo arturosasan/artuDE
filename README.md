@@ -25,10 +25,10 @@ The repository is designed to be instantly deployable on a fresh Arch Linux inst
 | Category | Tools |
 |---|---|
 | **Window Manager** | Hyprland, Hyprlock, Hyprpaper |
-| **Logout** | Wlogout |
 | **Bar** | Waybar + custom scripts |
 | **Notifications** | SwayNC |
 | **Launcher** | Rofi |
+| **Logout** | Wlogout |
 | **Theming** | GTK3/4, Qt6ct, nwg-look, xsettingsd, fontconfig |
 | **TUI tools** | Neovim, Yazi, Btop, Cava, Fastfetch, Broot, Lazygit |
 | **Audio** | PipeWire/WirePlumber launcher bindings |
