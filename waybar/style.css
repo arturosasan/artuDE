@@ -110,7 +110,7 @@ window#waybar {
 #battery,
 #cpu,
 #memory,
-#temperature,
+/*#temperature,*/
 #backlight,
 #network,
 #pulseaudio,
@@ -192,7 +192,8 @@ window#waybar {
 
 #memory {
     color: @mauve;
-    border-radius: 0;
+    border-radius: 10px 0 0 10px;
+    margin-left: 4px;
 }
 
 #network {

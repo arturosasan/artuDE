@@ -14,7 +14,7 @@
     "backlight",
     "pulseaudio",
     "bluetooth",
-    "temperature",
+    //"temperature",
     "memory",
     "cpu",
     "battery",
