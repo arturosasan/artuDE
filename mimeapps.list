@@ -16,9 +16,10 @@ application/x-extension-shtml=zen.desktop
 application/xhtml+xml=zen.desktop
 application/x-extension-xhtml=zen.desktop
 application/x-extension-xht=zen.desktop
-x-scheme-handler/stirlingpdf=stirling-pdf-handler.desktop
+x-scheme-handler/stirlingpdf=Stirling-PDF-handler.desktop
 application/pdf=com.github.xournalpp.xournalpp.desktop
 x-scheme-handler/net.thunderbird=userapp-Thunderbird-LRWIR3.desktop
+video/matroska=vlc.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-O3YEQ3.desktop;
@@ -37,3 +38,4 @@ application/x-extension-xhtml=zen.desktop;
 application/x-extension-xht=zen.desktop;
 application/pdf=com.github.xournalpp.xournalpp.desktop;
 x-scheme-handler/net.thunderbird=userapp-Thunderbird-LRWIR3.desktop;
+video/matroska=vlc.desktop;
