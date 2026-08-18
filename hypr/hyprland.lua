@@ -426,3 +426,6 @@ hl.config({
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar & hyprpaper & swaync")
 end)
+
+-- HyprMod managed settings
+require("hyprland-gui")
