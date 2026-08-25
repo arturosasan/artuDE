@@ -2,10 +2,10 @@
 
 -- Settings
 hl.config({
-    dwindle = {
-        smart_split = true,
-    },
-    input = {
-        numlock_by_default = true,
-    },
+	dwindle = {
+		smart_split = false,
+	},
+	input = {
+		numlock_by_default = true,
+	},
 })
