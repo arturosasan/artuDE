@@ -196,7 +196,7 @@ hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --hold topgrade"))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("youtube-music"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("whatsdesk"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("flatpak run com.rtosta.zapzap"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
