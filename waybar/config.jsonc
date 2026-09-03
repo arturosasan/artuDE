@@ -171,7 +171,7 @@
     "format": "{icon}",
     "format-off": "",
     "format-on": "",
-    "format-connected": " {device_alias} - 󰁹 {device_battery_percentage}%",
+    "format-connected": " {device_alias}",
     "format-no-controller": "",
     "on-click": "kitty -e bluetui"
   },
