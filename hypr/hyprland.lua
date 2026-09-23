@@ -50,8 +50,8 @@ hl.on("hyprland.start", function()
 	-- Forzar esquema oscuro para GTK4 y Libadwaita
 	hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
 
-	-- Establecer tema oscuro para GTK3 (cambia "adw-gtk3-dark" por tu tema instalado)
-	hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"')
+	-- Establecer tema oscuro para GTK3 (Breeze-Dark)
+	hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "Breeze-Dark"')
 
 	-- Iniciar iwd para impala
 	hl.exec_cmd("systemctl start iwd")

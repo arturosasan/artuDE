@@ -30,7 +30,7 @@ try_install "screenshot (hyprshot)" sudo pacman -S --noconfirm hyprshot grim slu
 
 echo ""
 echo "[*] Installing GTK/Qt theming..."
-install_pkg gtk3 gtk4 qt6ct nwg-look xsettingsd || true
+install_pkg gtk3 gtk4 breeze-gtk qt6ct nwg-look xsettingsd || true
 
 echo ""
 echo "[*] Installing audio..."

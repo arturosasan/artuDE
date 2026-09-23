@@ -12,7 +12,7 @@ The repository is designed to be instantly deployable on a fresh Arch Linux inst
 - **Modern status bar** — Waybar with custom modules (audio, network, system stats, Hyprland workspaces)
 - **Notification center** — SwayNC with a clean, minimal look
 - **App launcher** — Rofi with a custom theme
-- **Consistent theming** — GTK3/4, Qt6 (via qt6ct), and nwg-look integration for a unified look across native and Electron apps
+- **Consistent theming** — Breeze-Dark (via breeze-gtk) on GTK3/4, Qt6 (via qt6ct), and nwg-look integration for a unified look across native and Electron apps
 - **Terminal ecosystem** — Preconfigured Neovim, Yazi (file manager), Btop (system monitor), Cava (audio visualizer), Fastfetch (system info), Broot (directory tree), and Lazygit (Git UI)
 - **Audio** — PipeWire/WirePlumber controls bound to media keys
 - **System services** — Systemd user units, custom MIME associations, and XDG user directories
