@@ -58,6 +58,8 @@ hl.on("hyprland.start", function()
 
 	-- Opcional: Iniciar otros programas
 	-- hl.exec_cmd("waybar & hyprpaper")
+
+	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 end)
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
@@ -196,7 +198,7 @@ hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --hold topgrade"))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("youtube-music"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("flatpak run com.rtosta.zapzap"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("zapfast"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
