@@ -87,9 +87,9 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     },
-    "format-alt": "  {:L%a %d %b  %H:%M}", //12 hour format
+    "format-alt": " {:L%a %d %b  %H:%M}", //12 hour format
     // "format": " {:%d %m %Y  %H:%M}",	//24 hour format
-      "format": "  {:%d/%m  %H:%M}", 
+      "format": " {:%d/%m  %H:%M}", 
     // //"timezones": [ "Kolkata" ],
     // //"max-length": 200
     "interval": 1
