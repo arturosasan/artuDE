@@ -2,10 +2,12 @@
 
 -- Settings
 hl.config({
-	dwindle = {
-		smart_split = false,
-	},
-	input = {
-		numlock_by_default = true,
-	},
+    dwindle = {
+        smart_split = false,
+    },
+    input = {
+        kb_layout = "es",
+        kb_options = "grp:alt_shift_toggle_bidir",
+        numlock_by_default = true,
+    },
 })

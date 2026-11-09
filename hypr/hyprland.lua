@@ -200,6 +200,7 @@ hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("youtube-music"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("zapfast"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
+hl.bind(mainMod .. " + J", hl.dsp.exec_cmd("org.jellyfin.JellyfinDesktop"))
 
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
@@ -431,3 +432,6 @@ end)
 
 -- HyprMod managed settings
 require("hyprland-gui")
+
+-- hyprmon: managed monitor profile include
+require("hyprmon")
