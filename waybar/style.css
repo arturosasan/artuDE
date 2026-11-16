@@ -270,11 +270,21 @@ window#waybar {
 }
 
 #custom-notification.dnd-none {
-    color: @overlay0;
+    color: @red;
 }
 
 #custom-notification.dnd-notification {
     color: @mauve;
+}
+
+#custom-notification.inhibited-none,
+#custom-notification.inhibited-notification {
+    color: @peach;
+}
+
+#custom-notification.dnd-inhibited-none,
+#custom-notification.dnd-inhibited-notification {
+    color: @red;
 }
 
 window.empty #window {

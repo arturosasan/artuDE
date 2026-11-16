@@ -199,8 +199,10 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("youtube-music"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("zapfast"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -d -sw"))
 hl.bind(mainMod .. " + J", hl.dsp.exec_cmd("org.jellyfin.JellyfinDesktop"))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("flatpak run com.ktechpit.red"))
 
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
@@ -427,8 +429,16 @@ hl.config({
 })
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar & hyprpaper & swaync")
+	hl.exec_cmd("waybar & hyprpaper")
 end)
+
+-- Blur SwayNC layers so the translucent CSS stays readable.
+hl.layer_rule({
+	name = "swaync-blur",
+	match = { namespace = "^(swaync-control-center|swaync-notification-window)$" },
+	blur = true,
+	ignore_alpha = 0.2,
+})
 
 -- HyprMod managed settings
 require("hyprland-gui")

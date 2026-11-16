@@ -1,13 +1,41 @@
-/* Noctalia Red palette for swaync */
-@define-color on_surface             #f3f2f2;
-@define-color background             #291414;
-@define-color outline                #756161;
-@define-color on_secondary_fixed     #1e0d0d;
-@define-color on_secondary_fixed_variant #452121;
-@define-color error                  #be2928;
-@define-color inverse_surface        #f3f2f2;
-@define-color on_secondary           #f3f2f2;
-@define-color color1                 #E5211D;
+/* Noctalia Red Glass — SwayNC 0.12.6 (GTK 4) */
+
+/* Paleta base Noctalia */
+@define-color on_surface #f3f2f2;
+@define-color background #291414;
+@define-color outline #756161;
+@define-color error #be2928;
+@define-color color1 #E5211D;
+
+/* Tokens del rediseño */
+@define-color cc_bg_top rgba(45, 22, 22, 0.95);
+@define-color cc_bg_mid rgba(27, 14, 14, 0.94);
+@define-color cc_bg_bottom rgba(14, 7, 7, 0.93);
+@define-color cc_popup_top rgba(45, 22, 22, 0.97);
+@define-color cc_popup_bottom rgba(16, 8, 8, 0.96);
+@define-color cc_surface rgba(255, 255, 255, 0.045);
+@define-color cc_surface_hover rgba(255, 255, 255, 0.075);
+@define-color cc_line rgba(255, 255, 255, 0.07);
+@define-color cc_line_accent rgba(229, 33, 29, 0.26);
+@define-color cc_text #f3f2f2;
+@define-color cc_text_dim #b7a3a3;
+@define-color cc_body #d8caca;
+@define-color cc_accent #e5211d;
+@define-color cc_critical #ff4b47;
+@define-color cc_low #8b7777;
+@define-color cc_shadow rgba(0, 0, 0, 0.65);
+
+/* Alias de compatibilidad */
+@define-color text @cc_text;
+@define-color urgent @cc_critical;
+@define-color selected @cc_accent;
+@define-color hover alpha(@cc_accent, 0.5);
 
 @import 'themes/control_center.css';
 @import 'themes/notifications.css';
+
+notificationwindow, blankwindow,
+window.blank-window, .blank-window,
+window.floating-notifications, .floating-notifications {
+  background: transparent;
+}

@@ -1,101 +1,396 @@
-@define-color text            @inverse_surface;
-@define-color background-alt  @background;
-@define-color selected        @color1;
-@define-color hover           alpha(@color1, .6);
-@define-color urgent          @error;
+/* Noctalia Red Glass — notificaciones flotantes */
 
-* {
-  color: @text;
-  all: unset;
-  font-size: 14px;
-  font-family: "JetBrains Mono Nerd Font";
-  transition: 200ms;
+.floating-notifications {
+  background: transparent;
+  color: @cc_text;
+  font-family: "Noto Sans", "Adwaita Sans", sans-serif;
+  font-size: 13.5px;
 }
 
-.notification-row {
-  outline: none;
+.floating-notifications label {
+  color: @cc_text;
+  text-shadow: none;
+}
+
+.floating-notifications button {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  color: @cc_text;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.floating-notifications button:focus,
+.floating-notifications entry:focus {
+  box-shadow: 0 0 0 2px rgba(229, 33, 29, 0.45);
+}
+
+.floating-notifications .notification-row {
+  background: transparent;
   margin: 0;
-  padding: 0px;
-}
-
-.floating-notifications.background .notification-row .notification-background {
-  background-color: rgba(0, 0, 0, 0.35);
-  border: 1px solid alpha(@selected, .5);
-  border-radius: 16px;
-  margin: 12px;
+  outline: none;
   padding: 0;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification {
-  padding: 6px;
-  border-radius: 12px;
+.floating-notifications .notification-row .notification-background {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification.critical {
-  border: 1px solid @urgent;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification .notification-content {
-  margin: 12px;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * {
-  min-height: 3em;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  border-radius: 8px;
-  background-color: @background-alt;
-  margin: 4px;
-  border: 1px solid transparent;
-}
-
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
-  background-color: @hover;
-  border: 1px solid alpha(@selected, .4);
-}
-
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
-  background-color: @selected;
-  color: @on_secondary_fixed;
-}
-
-.image {
-  margin: 8px 16px 8px 0px;
-  border-radius: 8px;
-}
-
-.summary {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.body {
-  font-size: 0.85rem;
-}
-
-.floating-notifications.background .notification-row .notification-background .close-button {
-  margin: 4px;
-  padding: 2px 6px;
-  border-radius: 6px;
+.floating-notifications .notification-row .notification-background .notification {
   background-color: transparent;
-  border: 1px solid transparent;
+  background-image: linear-gradient(180deg,
+      @cc_popup_top 0%,
+      @cc_popup_bottom 100%);
+  border: 1px solid rgba(229, 33, 29, 0.30);
+  border-left: 3px solid @cc_accent;
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+              0 16px 44px rgba(0, 0, 0, 0.60);
+  color: @cc_text;
+  margin: 10px;
+  padding: 0;
+  transition: background-color 160ms ease-out;
 }
 
-.floating-notifications.background .notification-row .notification-background .close-button:hover {
-  background-color: alpha(@selected, .5);
+.floating-notifications .notification-row .notification-background .notification.low {
+  background-image: linear-gradient(180deg,
+      rgba(45, 22, 22, 0.97) 0%,
+      rgba(16, 8, 8, 0.96) 100%);
+  border-left-color: @cc_low;
 }
 
-.floating-notifications.background .notification-row .notification-background .close-button:active {
-  background-color: @selected;
-  color: @on_secondary_fixed;
+.floating-notifications .notification-row .notification-background .notification.critical {
+  background-image: linear-gradient(180deg,
+      rgba(74, 25, 25, 0.97) 0%,
+      rgba(28, 10, 10, 0.96) 100%);
+  border-color: rgba(255, 75, 71, 0.35);
+  border-left-color: @cc_critical;
 }
 
-.notification.critical progress {
-  background-color: @error;
+.floating-notifications .notification-row .notification-background .notification:hover {
+  border-color: rgba(229, 33, 29, 0.42);
 }
 
-.notification.low progress,
-.notification.normal progress {
-  background-color: @hover;
+.floating-notifications .notification-row .notification-background .notification.critical:hover {
+  border-color: rgba(255, 75, 71, 0.50);
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-default-action {
+  background: transparent;
+  border: none;
+  border-radius: 17px;
+  box-shadow: none;
+  color: @cc_text;
+  margin: 0;
+  padding: 14px;
+  transition: background-color 160ms ease-out;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-default-action:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content {
+  background: transparent;
+  border-radius: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content .image {
+  -gtk-icon-size: 26px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 11px;
+  margin: 0 5px 0 0;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content .app-icon {
+  -gtk-icon-size: 18px;
+  -gtk-icon-shadow: 0 1px 3px rgba(0, 0, 0, 0.80);
+  background-color: #1a0d0d;
+  border: 2px solid #1a0d0d;
+  border-radius: 999px;
+  margin: 0;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content .text-box label {
+  filter: none;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content .text-box .summary {
+  background: transparent;
+  color: @cc_text;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content .text-box .time {
+  color: @cc_text_dim;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin-left: 8px;
+  margin-right: 28px;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content .text-box .body {
+  background: transparent;
+  color: @cc_body;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  text-shadow: none;
+}
+
+.floating-notifications .notification-row .notification-background .notification.low .summary {
+  color: rgba(243, 242, 242, 0.82);
+  font-weight: 500;
+}
+
+.floating-notifications .notification-row .notification-background .notification.low .body {
+  color: rgba(216, 202, 202, 0.70);
+}
+
+.floating-notifications .notification-row .notification-background .notification.critical .summary {
+  color: #ffe3e1;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-content picture {
+  border-radius: 12px;
+  margin-top: 4px;
+}
+
+.floating-notifications .notification-row .notification-background .close-button {
+  background-color: rgba(0, 0, 0, 0.35);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  box-shadow: none;
+  color: @cc_text;
+  margin: 8px;
+  min-height: 22px;
+  min-width: 22px;
+  opacity: 0.85;
+  padding: 0;
+  transition: background-color 150ms ease-out, opacity 150ms ease-out;
+}
+
+.floating-notifications .notification-row .notification-background .close-button:hover {
+  background-color: @cc_accent;
+  border-color: @cc_accent;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.floating-notifications .notification-row .notification-background .close-button:active {
+  background-color: #b81714;
+  border-color: #b81714;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-alt-actions {
+  background: transparent;
+  border-radius: 0 0 17px 17px;
+  margin: 0;
+  padding: 0 10px 10px 10px;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-action {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 999px;
+  color: @cc_text;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 3px;
+  padding: 0;
+  transition: background-color 150ms ease-out;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-action > button {
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: inherit;
+  padding: 5px 10px;
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-action:hover {
+  background-color: rgba(229, 33, 29, 0.16);
+  border-color: rgba(229, 33, 29, 0.35);
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-action:active {
+  background-color: @cc_accent;
+  border-color: @cc_accent;
+  color: #ffffff;
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply {
+  margin-top: 6px;
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply-entry {
+  background-color: rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  caret-color: @cc_accent;
+  color: @cc_text;
+  min-height: 28px;
+  padding: 6px 9px;
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply-entry:focus {
+  border-color: rgba(229, 33, 29, 0.50);
+  box-shadow: 0 0 0 2px rgba(229, 33, 29, 0.18);
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply-entry placeholder {
+  color: @cc_text_dim;
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply-button {
+  background-color: @cc_accent;
+  background-image: linear-gradient(180deg, #f0443f 0%, #c81b18 100%);
+  border: 1px solid rgba(255, 120, 116, 0.35);
+  border-radius: 9px;
+  color: #ffffff;
+  margin-left: 6px;
+  min-height: 30px;
+  min-width: 30px;
+  padding: 0;
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply-button:hover {
+  background-image: linear-gradient(180deg, #f65a55 0%, #d6201c 100%);
+}
+
+.floating-notifications .notification-row .notification-background .notification .inline-reply-button:disabled {
+  background-color: rgba(255, 255, 255, 0.04);
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.06);
+  color: @cc_text_dim;
+}
+
+.floating-notifications .notification-row .notification-background .notification progressbar {
+  background-color: transparent;
+  border: none;
+  margin-top: 6px;
+  min-height: 4px;
+}
+
+.floating-notifications .notification-row .notification-background .notification progressbar trough {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  min-height: 4px;
+}
+
+.floating-notifications .notification-row .notification-background .notification progressbar progress {
+  background-color: @cc_accent;
+  border-radius: 999px;
+  min-height: 4px;
+}
+
+.floating-notifications .notification-row .notification-background .notification.critical progress {
+  background-color: @cc_critical;
+}
+
+.floating-notifications .notification-row .notification-background .notification.low progress {
+  background-color: @cc_low;
+}
+
+.floating-notifications .notification-group {
+  background: transparent;
+  margin: 0 0 8px 0;
+}
+
+.floating-notifications .notification-group-headers {
+  color: @cc_text_dim;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin: 2px 16px 6px 16px;
+}
+
+.floating-notifications .notification-group-header {
+  color: @cc_text_dim;
+}
+
+.floating-notifications .notification-group.critical .notification-group-header,
+.floating-notifications .notification-group.critical .notification-group-icon {
+  color: @cc_critical;
+}
+
+.floating-notifications .notification-row,
+.floating-notifications .notification-row:focus,
+.floating-notifications .notification-row:focus-visible,
+.floating-notifications .notification-row .notification-background,
+.floating-notifications .notification-row .notification-background .notification,
+.floating-notifications .notification-row .notification-background .notification .notification-default-action {
+  outline: none;
+}
+
+.floating-notifications .notification-row:focus,
+.floating-notifications .notification-row:focus-visible {
+  background: transparent;
+  box-shadow: none;
+}
+
+.floating-notifications .notification-row:focus .notification,
+.floating-notifications .notification-row:focus-visible .notification {
+  border-color: rgba(229, 33, 29, 0.55);
+  box-shadow: 0 0 0 2px rgba(229, 33, 29, 0.45), 0 16px 44px rgba(0, 0, 0, 0.60);
+}
+
+.floating-notifications scrollbar {
+  background: transparent;
+  border: none;
+  min-width: 6px;
+}
+
+.floating-notifications scrollbar trough {
+  background: transparent;
+  border: none;
+}
+
+.floating-notifications scrollbar slider {
+  background-color: rgba(255, 255, 255, 0.14);
+  border: none;
+  border-radius: 999px;
+  margin: 2px;
+  min-height: 32px;
+  min-width: 4px;
+}
+
+.floating-notifications scrollbar slider:hover {
+  background-color: rgba(229, 33, 29, 0.55);
+}
+
+.floating-notifications scrollbar:disabled,
+.floating-notifications scrollbar:disabled slider {
+  background: transparent;
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
 }
