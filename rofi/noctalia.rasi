@@ -1,0 +1,119 @@
+/* Noctalia Glass — modern Rofi theme for artuDE */
+
+@import "palette.rasi"
+
+* {
+    accent-soft: #e4686729;
+    accent-line: #e4686759;
+
+    font: "JetBrainsMono Nerd Font 12";
+    background-color: transparent;
+    text-color: @fg0;
+
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+/* ===== Window ===== */
+window {
+    location: center;
+    width: 600px;
+    padding: 10px;
+
+    border: 1px;
+    border-color: @accent-line;
+    border-radius: 16px;
+
+    background-color: #291414d9;
+}
+
+/* ===== Main container ===== */
+mainbox {
+    padding: 6px;
+    spacing: 10px;
+}
+
+/* ===== Search bar ===== */
+inputbar {
+    children: [ icon-search, entry ];
+    spacing: 10px;
+    padding: 10px 14px;
+
+    border-radius: 12px;
+    background-color: #45212199;
+}
+
+icon-search {
+    filename: "search";
+    size: 18px;
+    expand: false;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "Buscar aplicaciones…";
+    placeholder-color: @fg2;
+    background-color: transparent;
+}
+
+/* ===== List ===== */
+listview {
+    lines: 7;
+    columns: 1;
+    spacing: 4px;
+
+    margin: 2px 0 0;
+    padding: 2px 0;
+    scrollbar: false;
+    fixed-height: false;
+    background-color: transparent;
+}
+
+/* ===== Rows ===== */
+element {
+    padding: 10px 12px;
+    spacing: 12px;
+
+    border: 1px;
+    border-color: transparent;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @accent-soft;
+    border-color: @accent-line;
+}
+
+element normal urgent {
+    text-color: @urgent;
+}
+
+/* ===== Icons & text ===== */
+element-icon {
+    size: 22px;
+}
+
+element-text {
+    text-color: @fg0;
+    highlight: bold #e46867;
+}
+
+/* ===== Message box ===== */
+message {
+    margin: 8px 0 0;
+    padding: 10px 14px;
+    border: 1px;
+    border-color: @accent-line;
+    border-radius: 12px;
+    background-color: #1f0e0ecc;
+}
+
+textbox {
+    padding: 4px 8px;
+    background-color: transparent;
+}

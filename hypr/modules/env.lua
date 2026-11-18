@@ -1,0 +1,16 @@
+-------------------------------
+---- ENVIRONMENT VARIABLES ----
+-------------------------------
+
+hl.env("XCURSOR_SIZE", "28")
+-- needs the matching icon theme installed; Quickshell falls back without it
+-- hl.env("QS_ICON_THEME", "FairyWren_Light")
+-- needs the aosp-cursors package
+-- hl.env("XCURSOR_THEME", "aosp-cursors")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+
+-- set from lucid settings > environment
+hl.env("XCURSOR_THEME", "lucid-cursors")
+hl.env("HYPRCURSOR_THEME", "lucid-cursors")
+hl.env("HYPRCURSOR_SIZE", "28")
+hl.env("QS_ICON_THEME", "breeze-dark")
